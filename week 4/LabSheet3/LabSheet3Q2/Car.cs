@@ -11,9 +11,9 @@ namespace LabSheet3Q2
         private string Make;
         public string make
         {
-            get { return this.make; }
-            set { this.make = value; }
-
+            get { return this.Make; }
+            set { this.Make = value; }
+        }
             private string _model;
 
         public string Model

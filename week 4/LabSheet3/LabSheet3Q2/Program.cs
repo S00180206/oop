@@ -22,6 +22,17 @@ namespace LabSheet3Q2
             c2.CurrentSpeed = 0;
             c2.EngineSize = 1.2;
 
+            c1.DisplayCarInfo();
+
+            Console.WriteLine(c2);
+
+            for(int i=0; i<10; i++)
+            {
+                c1.Accelerate();
+            }
+
+            Console.WriteLine(c1);
+
 
         }
     }
