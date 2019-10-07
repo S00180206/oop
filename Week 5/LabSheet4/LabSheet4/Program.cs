@@ -27,6 +27,31 @@ namespace LabSheet4
 
             Display(teams);
 
+            SligoRovers.AddResult(Result.Win);
+            FinnHarps.AddResult(Result.Loss);
+            GalwayUnited.AddResult(Result.Draw);
+            DerryCity.AddResult(Result.Win);
+            Dundalk.AddResult(Result.Loss);
+
+            Display(teams);
+
+            teams.Sort();
+            teams.Reverse();
+
+            Display(teams);
+
+            SligoRovers.Players.Add(new Player() { Name = "Ed McGinty", Position = "GoalKeeper" });
+            SligoRovers.Players.Add(new Player() { Name = "John Mahon", Position = "Defender" });
+            SligoRovers.Players.Add(new Player() { Name = "Ronan Coughlan", Position = "Forward" });
+
+            Console.WriteLine("\nSligo Rovers Teamsheet");
+            foreach(Player player in SligoRovers.Players)
+            {
+                //Console.WriteLine($"{player.Name} - {player.Position}");
+                Console.WriteLine(player);
+
+            }
+
         }
         static void Display(List<Team> teams)
         {
