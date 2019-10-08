@@ -10,6 +10,8 @@ namespace LabSheet4
 
     public class Team : IComparable
     {
+
+
         #region Properties
         public string Name { get; private set; }
 
