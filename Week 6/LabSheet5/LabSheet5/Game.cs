@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabSheet5
 {
-    public abstract  class Game
+    public abstract class Game
     {
         #region Properties
 
@@ -21,14 +21,16 @@ namespace LabSheet5
             }
         }
 
-        public Game(string name, decimal price, DataTime releasedate )
+        private decimal 
+
+        public Game(string name, decimal price, DataTime releasedate)
         {
             _name = name;
             Price = price;
             releasedate = releasedate;
 
         }
-        public Game(string name, decimal price): this(name, price, DateTime.Now)
+        public Game(string name, decimal price) : this(name, price, DateTime.Now)
         {
 
         }
@@ -37,4 +39,19 @@ namespace LabSheet5
 
         #endregion Constructors
     }
+    public ComputerGame : Game
+        {
+            public string PEGI_Rating { set; get; }
+
+            public ComputerGame(string name, decimal price, DateTime date, string pegi)
+                 : base(name, price, date)
+                {
+                     PEGI_Rating = pegi;
+                }
+        }
+    public decimal GetDiscountPrice()
+{
+    return Price * .9m;
+}
+
 }

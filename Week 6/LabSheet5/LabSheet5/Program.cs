@@ -8,13 +8,14 @@ namespace LabSheet5
 {
     class Program
     {
-        public string Name { get; set; }
-
-        public decimal Price { get; set; }
-
-        public int DateTime { get; set; }
+       
         static void Main(string[] args)
         {
+            Game g1 = new Game("Monopoly", 19.99m, new DateTime(1970, 01, 31));
+
+            Game g2 = new Game() { Price = 10.99m, ReleaseDate = new DateTime(2000, 6, 15) };
+
+
         }
     }
 }
