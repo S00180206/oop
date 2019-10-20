@@ -21,13 +21,17 @@ namespace LabSheet5
             }
         }
 
-        private decimal 
+        protected decimal Price { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
-        public Game(string name, decimal price, DataTime releasedate)
+        #endregion Properties
+
+        #region Constructors
+        public Game(string name, decimal price, DateTime releasedate)
         {
             _name = name;
             Price = price;
-            releasedate = releasedate;
+            ReleaseDate = releasedate;
 
         }
         public Game(string name, decimal price) : this(name, price, DateTime.Now)
@@ -38,20 +42,44 @@ namespace LabSheet5
         public Game() : this("", 0) { }
 
         #endregion Constructors
-    }
-    public ComputerGame : Game
+
+        public override string ToString()
         {
-            public string PEGI_Rating { set; get; }
-
-            public ComputerGame(string name, decimal price, DateTime date, string pegi)
-                 : base(name, price, date)
-                {
-                     PEGI_Rating = pegi;
-                }
+            return string.Format($"{Name}{Price:C} {ReleaseDate.ToShortDateString()}");
         }
-    public decimal GetDiscountPrice()
-{
-    return Price * .9m;
-}
 
-}
+        public abstract void UpdatePrice(decimal percenageIncrease);
+       // {
+       //     Price *= (1 + percenageIncrease);
+       // }
+
+    }//end of class
+
+    public class ComputerGame:Game
+    {
+        public string PEGI_Rating { set; get; }
+
+        public ComputerGame(string name, decimal price, DateTime date, string pegi)
+             : base(name, price, date)
+        {
+            PEGI_Rating = pegi;
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"{base.ToString()} PEGI {PEGI_Rating}");
+        }
+        public decimal GetDiscountPrice()
+        {
+            return Price * .9m;
+        }
+
+        public override void UpdatePrice(decimal percentageIncrease)
+        {
+            Price *= (1 + percentageIncrease);
+            Console.WriteLine("Updating the Price");
+        }
+    }
+        
+ }
+
