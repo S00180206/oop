@@ -4,16 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ex1
+namespace Game
+
 {
     public class Player
     {
-        public int ID { get; set; }
+        public int ID { get;  }
 
         public string PlayerName { get; set; }
 
-        public int score { get; set; }
+        public int Score { get; set; }
 
+        public Player (int id, string playerName, int score )
+        {
+            ID = id;
+            PlayerName = playerName;
+            Score = score;
+        }
 
     }
 }
