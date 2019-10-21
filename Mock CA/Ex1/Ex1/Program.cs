@@ -28,6 +28,7 @@ namespace Game
 
             Display(AllPlayers);
             GetScores(AllPlayers);
+            DisplayPlayerDetails(AllPlayers);
 
         }
 
@@ -67,6 +68,15 @@ namespace Game
             }
 
             Console.WriteLine();//new line to make it more tidy
+        }
+
+        private static void DisplayPlayerDetails(List <Player> players)
+        {
+            Console.WriteLine($"{"ID"}\t{"Name"}\t{"Score"}");
+            foreach (Player player in players)
+            {
+                Console.WriteLine(player);
+            }
         }
     }
 }

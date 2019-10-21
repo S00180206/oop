@@ -35,5 +35,10 @@ namespace Game
                 HighScore = Score;
         }
 
+        public override string ToString()
+        {
+            return $"{ID}\t{PlayerName}\t{Score}";
+        }
+
     }
 }
