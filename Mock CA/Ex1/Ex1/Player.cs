@@ -15,6 +15,9 @@ namespace Game
 
         public int Score { get; private set; }
 
+        public static int HighScore { get; private set; }
+
+
         public Player (int id, string playerName, int score )
         {
             ID = id;
@@ -26,6 +29,10 @@ namespace Game
         {
             if (Score < 100)
                 Score += valueToAdd;
+
+            //check for high score
+            if (Score > HighScore)
+                HighScore = Score;
         }
 
     }
