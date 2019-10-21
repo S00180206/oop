@@ -27,9 +27,32 @@ namespace Game
             player2.IncreaceScore(5);
 
             Display(AllPlayers);
+            GetScores(AllPlayers);
 
+        }
 
+        private static void GetScores(List<Player> AllPlayers)
+        {
+            // loop asking for player number 
+            Console.WriteLine("please enter the number of player you wish to add the score for");
+            string responce = Console.ReadLine();
+            int playerNumber = int.Parse(responce);
 
+            while (playerNumber != 0)
+            {
+                // determine player selected
+                Player selectedPlayer = AllPlayers.ElementAt(playerNumber - 1);//using minus 1 as index starts at zero
+
+                //increase score for that player
+                selectedPlayer.IncreaceScore(1);
+                //display results
+                Display(AllPlayers);
+
+                //ask player or zero to quit
+                Console.WriteLine("please enter the number of player you wish to add the score for");
+                responce = Console.ReadLine();
+                playerNumber = int.Parse(responce);
+            }//end
         }
 
         public static void Display(List<Player>players)
@@ -42,6 +65,8 @@ namespace Game
             {
                 Console.Write("{0,-10}", player.Score);
             }
+
+            Console.WriteLine();//new line to make it more tidy
         }
     }
 }
