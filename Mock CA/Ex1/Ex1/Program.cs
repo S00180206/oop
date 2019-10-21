@@ -26,6 +26,22 @@ namespace Game
             player1.IncreaceScore(1);
             player2.IncreaceScore(5);
 
+            Display(AllPlayers);
+
+
+
+        }
+
+        public static void Display(List<Player>players)
+        {
+            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}{4,-10}", "Player1", "Player2", "Player3", "Player4", "Player5");
+
+            //loop for players and scores
+
+            foreach (Player player in players)
+            {
+                Console.Write("{0,-10}", player.Score);
+            }
         }
     }
 }
