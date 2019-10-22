@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Game
 
 {
-    public class Player
+    public class Player :IComparable
     {
         public int ID { get;  }
 
@@ -40,5 +40,17 @@ namespace Game
             return $"{ID}\t{PlayerName}\t{Score}";
         }
 
+        public int CompareTo(object obj)
+        {
+            //get a refrence to the next object in the list/array/collection
+            Player objectThatIAmComparingTo = (Player)obj;//or obj as Player;//something to compare our current object to
+
+
+            //indicate what field I want ro compare
+            int returnValue = this.Score.CompareTo(objectThatIAmComparingTo.Score);
+
+            //return
+            return returnValue;
+        }
     }
 }

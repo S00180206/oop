@@ -30,6 +30,13 @@ namespace Game
             GetScores(AllPlayers);
             DisplayPlayerDetails(AllPlayers);
 
+            //sort the lis
+            AllPlayers.Sort();
+            AllPlayers.Reverse();
+            DisplayPlayerDetails(AllPlayers);
+
+            Console.WriteLine($"highest score is {Player.HighScore}");
+
         }
 
         private static void GetScores(List<Player> AllPlayers)
