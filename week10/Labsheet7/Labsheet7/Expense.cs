@@ -10,12 +10,33 @@ namespace Labsheet7
     {
 
         //properties
-        public decimal Amount { get; set; }
+        //public decimal Amount { get; set; }
+        private decimal _amount;
+
+        public decimal Amount
+        {
+            get { return _amount; }
+            set
+            {
+                TotalExpenses += value;
+                _amount = value;
+            }
+        }
+
         public DateTime ExpenseDate { get; set; }
         public string Category { get; set; }
 
-        //constructors-return later
+        public static decimal TotalExpenses;
 
+        //constructors-return later to link with this 
+        public Expense():this(0, DateTime.Now,"Unknown"){}
+
+        public Expense(decimal amount, DateTime date, string category)
+        {
+            Amount = amount;
+            ExpenseDate = date;
+            Category = category;
+        }
         //methods
         public override string ToString()
         {
