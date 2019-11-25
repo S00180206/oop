@@ -58,7 +58,7 @@ namespace CA2_S00180206
         private void BtnSadd_Click(object sender, RoutedEventArgs e)
         {
             //what item is selected
-            Activity selectedActivity = lbAll.SelectedItems as Activity;//item selected
+            Activity selectedActivity = lbAll.SelectedItem as Activity;//item selected
             //null check
             if (selectedActivity != null)
             {
@@ -80,7 +80,7 @@ namespace CA2_S00180206
         private void BtnARemove_Click(object sender, RoutedEventArgs e)
         {
             //what item is selected
-            Activity selectedActivity = lbselected.SelectedItems as Activity;//item selected
+            Activity selectedActivity = lbselected.SelectedItem as Activity;//item selected
             //null check
             if (selectedActivity != null)
             {
