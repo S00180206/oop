@@ -34,7 +34,7 @@ namespace CA2_S00180206
 
         public override string ToString()
         {
-            return $"{Name}\t{Description}\t{Date}\t{Cost}\t{"ActivityType"}";
+            return $"{Name} {Date.ToShortDateString()}";
         }
 
         public int CompareTo(object obj)
