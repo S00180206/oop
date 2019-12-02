@@ -8,7 +8,7 @@ namespace CA2_S00180206
 {
     
     
-    class Activity:IComparable
+   public  class Activity:IComparable
     {
         public enum ActivityType{ land, water, air};
         public string Name { get; set; }
@@ -19,7 +19,7 @@ namespace CA2_S00180206
 
         public double Cost { get; set; }
 
-
+        public ActivityType activityType1;
 
         public Activity (string name, string description, DateTime date, double cost, ActivityType activityType)
         {
@@ -27,7 +27,7 @@ namespace CA2_S00180206
             Description = description;
             Date = date;
             Cost = cost;
-            ActivityType activityType1 = activityType;
+            activityType1 = activityType;
 
         }
         

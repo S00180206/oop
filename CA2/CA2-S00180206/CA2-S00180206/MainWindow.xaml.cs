@@ -22,6 +22,7 @@ namespace CA2_S00180206
     {
         List<Activity> allActivities = new List<Activity>();
         List<Activity> selectedActivities = new List<Activity>();
+        List<Activity> filteredActivities = new List<Activity>();
 
 
         public MainWindow()
@@ -89,12 +90,70 @@ namespace CA2_S00180206
                 selectedActivities.Remove(selectedActivity);
 
                 //refresh screen
-                lbAll.ItemsSource = null;
-                lbAll.ItemsSource = allActivities;
+                RefreshScreen();
 
-                lbselected.ItemsSource = null;
-                lbselected.ItemsSource = selectedActivities;
+            }
+        }
 
+        private void RefreshScreen()
+        {
+            lbAll.ItemsSource = null;
+            lbAll.ItemsSource = allActivities;
+
+            lbselected.ItemsSource = null;
+            lbselected.ItemsSource = selectedActivities;
+        }
+
+        private void RbAll_Click(object sender, RoutedEventArgs e)
+        {
+            filteredActivities.Clear();
+
+            if (rbAll.IsChecked == true)
+            {
+                //show all
+                RefreshScreen();
+            }
+            else if(rbLand.IsChecked==true)
+            {
+                //land only
+                foreach (Activity activity in allActivities)
+                {
+                    if (activity.activityType1 == Activity.ActivityType.land)
+                        filteredActivities.Add(activity);
+                    lbAll.ItemsSource = null;
+                    lbAll.ItemsSource = filteredActivities;
+
+
+
+                }
+            }
+            else if (rbWater.IsChecked == true)
+            {
+                //water only
+                foreach (Activity activity in allActivities)
+                {
+                    if (activity.activityType1 == Activity.ActivityType.water)
+                        filteredActivities.Add(activity);
+                    lbAll.ItemsSource = null;
+                    lbAll.ItemsSource = filteredActivities;
+
+
+
+                }
+            }
+            else if (rbAir.IsChecked == true)
+            {
+                //air only
+                foreach (Activity activity in allActivities)
+                {
+                    if (activity.activityType1 == Activity.ActivityType.air)
+                        filteredActivities.Add(activity);
+                    lbAll.ItemsSource = null;
+                    lbAll.ItemsSource = filteredActivities;
+
+
+
+                }
             }
         }
     }
