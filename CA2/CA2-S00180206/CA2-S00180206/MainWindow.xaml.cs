@@ -23,7 +23,7 @@ namespace CA2_S00180206
         List<Activity> allActivities = new List<Activity>();
         List<Activity> selectedActivities = new List<Activity>();
         List<Activity> filteredActivities = new List<Activity>();
-
+        double total = 0;
 
         public MainWindow()
         {
@@ -33,13 +33,13 @@ namespace CA2_S00180206
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            Activity a1 = new Activity("Kayaking", "padling in a small boat for two or one person", new DateTime(2019,06,01), 25, Activity.ActivityType.water);
-            Activity a2 = new Activity("Parachuting", "droping from the sky in paracute", new DateTime(2019,06,01), 70, Activity.ActivityType.air);
-            Activity a3 = new Activity("Mountain Biking", "off road cycling", new DateTime(2019,06,02), 35, Activity.ActivityType.land);
-            Activity a4 = new Activity("Hang Gliding", "gliding in the air", new DateTime(2019, 06, 02), 95, Activity.ActivityType.air);
-            Activity a5 = new Activity("Abseliling", "rock climbing", new DateTime(2019, 06, 03), 45, Activity.ActivityType.land);
-            Activity a6 = new Activity("Sailing", "sailing a boat", new DateTime(2019, 06, 03), 90, Activity.ActivityType.water);
-            Activity a7 = new Activity("Helicoptor Tour", "seeing sites in the air", new DateTime(2019,06,03), 100, Activity.ActivityType.air);
+            Activity a1 = new Activity("Kayaking", "padling in a small boat for two or one person", new DateTime(2019,06,01), 25.35, Activity.ActivityType.water);
+            Activity a2 = new Activity("Parachuting", "droping from the sky in paracute", new DateTime(2019,06,01), 70.40, Activity.ActivityType.air);
+            Activity a3 = new Activity("Mountain Biking", "off road cycling", new DateTime(2019,06,02), 35.50, Activity.ActivityType.land);
+            Activity a4 = new Activity("Hang Gliding", "gliding in the air", new DateTime(2019, 06, 02), 95.99, Activity.ActivityType.air);
+            Activity a5 = new Activity("Abseliling", "rock climbing", new DateTime(2019, 06, 03), 45.20, Activity.ActivityType.land);
+            Activity a6 = new Activity("Sailing", "sailing a boat", new DateTime(2019, 06, 03), 90.75, Activity.ActivityType.water);
+            Activity a7 = new Activity("Helicoptor Tour", "seeing sites in the air", new DateTime(2019,06,03), 99.99, Activity.ActivityType.air);
 
             allActivities.Add(a1);
             allActivities.Add(a2);
@@ -73,7 +73,10 @@ namespace CA2_S00180206
 
                 lbselected.ItemsSource = null;
                 lbselected.ItemsSource = selectedActivities;
+                total = selectedActivity.Cost + total;
+                tbCost.Text = total.ToString();
 
+                
             }
 
         }
@@ -91,7 +94,8 @@ namespace CA2_S00180206
 
                 //refresh screen
                 RefreshScreen();
-
+                total = total - selectedActivity.Cost;
+                tbCost.Text = total.ToString();
             }
         }
 
@@ -154,6 +158,17 @@ namespace CA2_S00180206
 
 
                 }
+            }
+        }
+
+        private void LbAll_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Activity selectedActivity = lbAll.SelectedItem as Activity;//item selected
+            //null check
+            if (selectedActivity != null)
+            {
+                tbDescription.Text = selectedActivity.Description;
+
             }
         }
     }
