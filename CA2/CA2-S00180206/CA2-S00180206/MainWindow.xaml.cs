@@ -32,7 +32,7 @@ namespace CA2_S00180206
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            //list out variables of activity, description, date, cost and type of activity
             Activity a1 = new Activity("Kayaking", "padling in a small boat for two or one person", new DateTime(2019,06,01), 25.35, Activity.ActivityType.water);
             Activity a2 = new Activity("Parachuting", "droping from the sky in paracute", new DateTime(2019,06,01), 70.40, Activity.ActivityType.air);
             Activity a3 = new Activity("Mountain Biking", "off road cycling", new DateTime(2019,06,02), 35.50, Activity.ActivityType.land);
@@ -55,7 +55,7 @@ namespace CA2_S00180206
 
 
         }
-
+        //add button that when selected activity goes over to the selected list box
         private void BtnSadd_Click(object sender, RoutedEventArgs e)
         {
             //what item is selected
@@ -76,11 +76,12 @@ namespace CA2_S00180206
                 total = selectedActivity.Cost + total;
                 tbCost.Text = total.ToString();
 
-                
+
             }
-
+            else
+                ErrorMessage();
         }
-
+        //the reverse of the add button that brings it back the the activity type
         private void BtnARemove_Click(object sender, RoutedEventArgs e)
         {
             //what item is selected
@@ -97,8 +98,19 @@ namespace CA2_S00180206
                 total = total - selectedActivity.Cost;
                 tbCost.Text = total.ToString();
             }
+            else
+                ErrorMessage();
+            
+                
+        }
+        //displays messege that nothing was selected
+        private void ErrorMessage()
+        {
+            string errorMessage = "error: nothing was selected";
+            tbDescription.Text = errorMessage;
         }
 
+        //refreshing to its sourse
         private void RefreshScreen()
         {
             lbAll.ItemsSource = null;
@@ -108,6 +120,7 @@ namespace CA2_S00180206
             lbselected.ItemsSource = selectedActivities;
         }
 
+        //dividing the activities to their catagories radio buttons
         private void RbAll_Click(object sender, RoutedEventArgs e)
         {
             filteredActivities.Clear();
@@ -160,7 +173,7 @@ namespace CA2_S00180206
                 }
             }
         }
-
+        //reveals the description of selected activity
         private void LbAll_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Activity selectedActivity = lbAll.SelectedItem as Activity;//item selected

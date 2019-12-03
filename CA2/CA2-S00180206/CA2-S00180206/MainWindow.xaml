@@ -17,10 +17,10 @@
         <RadioButton x:Name="rbAir" Content="Air" HorizontalAlignment="Left" Margin="25,260,0,0" VerticalAlignment="Top" Click="RbAll_Click"/>
         <Label x:Name="label2" Content="Total Cost:" HorizontalAlignment="Left" Margin="549,22,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" Content="Activity Planner" HorizontalAlignment="Left" Margin="123,22,0,0" VerticalAlignment="Top" Foreground="#FF33E88D" FontSize="25"/>
-        <Label x:Name="label4" Content="Description" HorizontalAlignment="Left" Margin="144,353,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Description:" HorizontalAlignment="Left" Margin="144,353,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbAll" HorizontalAlignment="Left" Height="250" Margin="137,90,0,0" VerticalAlignment="Top" Width="191" SelectionChanged="LbAll_SelectionChanged"/>
         <ListBox x:Name="lbselected" HorizontalAlignment="Left" Height="250" Margin="513,90,0,0" VerticalAlignment="Top" Width="191"/>
-        <TextBlock x:Name="tbDescription" HorizontalAlignment="Left" Margin="217,359,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="48" Width="433"/>
+        <TextBlock x:Name="tbDescription" HorizontalAlignment="Left" Margin="217,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="433"/>
         <TextBlock x:Name="tbCost" HorizontalAlignment="Left" Margin="649,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>

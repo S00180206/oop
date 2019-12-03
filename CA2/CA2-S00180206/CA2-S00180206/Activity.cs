@@ -10,6 +10,7 @@ namespace CA2_S00180206
     
    public  class Activity:IComparable
     {
+        //variables
         public enum ActivityType{ land, water, air};
         public string Name { get; set; }
 
@@ -31,12 +32,12 @@ namespace CA2_S00180206
 
         }
         
-
+        //to show date of activity
         public override string ToString()
         {
             return $"{Name} {Date.ToShortDateString()}";
         }
-
+        //icomparable
         public int CompareTo(object obj)
         {
             //get a refrence to the next object in the list/array/collection
@@ -45,7 +46,7 @@ namespace CA2_S00180206
 
             //indicate what field I want ro compare
             int returnValue = this.Date.CompareTo(objectThatIAmComparingTo.Date);
-
+            
             //return
             return returnValue;
         }
