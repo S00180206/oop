@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Exam_s00180206
 {
-    class Player
+    public class Player
     {
         //variables 
-        public enum Position {Goalkeeper, Defender, Midfielder };
+        public enum Position {Goalkeeper, Defender, Midfielder, Forwards};
 
         public string FirstName { get; set; }
 
