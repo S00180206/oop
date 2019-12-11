@@ -1,0 +1,22 @@
+﻿<Window x:Class="Exam_s00180206.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exam_s00180206"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="253" Margin="115,90,0,0" VerticalAlignment="Top" Width="212"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="253" Margin="470,90,0,0" VerticalAlignment="Top" Width="212"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="659,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Spaces" HorizontalAlignment="Left" Margin="607,374,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="All Players" HorizontalAlignment="Left" Margin="121,54,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Selected Players" HorizontalAlignment="Left" Margin="478,57,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Formation" HorizontalAlignment="Left" Margin="129,20,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="200,22,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Add&gt;&gt;" HorizontalAlignment="Left" Margin="368,148,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="&lt;&lt;Remove" HorizontalAlignment="Left" Margin="368,216,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
